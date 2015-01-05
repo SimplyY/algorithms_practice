@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/algorithms_practice.iml" filepath="$PROJECT_DIR$/algorithms_practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/第2章_mergeSorted.iml" filepath="$PROJECT_DIR$/第2章_mergeSorted.iml" />
     </modules>
   </component>
 </project>
