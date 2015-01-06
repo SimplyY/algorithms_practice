@@ -2,12 +2,15 @@
  * Created by yuwei on 2015/1/5.
  */
 package com.yuwei;
-
+import java.math.*;
 public class Array {
     private int begin;
     private int end;
     private int[] array;
+    //times means the algorithms's caculating times
     private int times;
+    //n means quotiety of algorithms's n
+    private int c;
     private int mergeWay;
 
     Array(int[] array){
@@ -15,6 +18,7 @@ public class Array {
         end = array.length - 1;
         this.array = array;
         times = 0;
+        c = 0;
     }
 
     public void doMergeSort(int mergeWay){
@@ -23,13 +27,16 @@ public class Array {
         showMergeSort();
     }
     private void showMergeSort(){
-        System.out.print("排序方式：" + mergeWay + "  排序完成后数组：");
+        System.out.println("排序方式：" + mergeWay + "\n排序完成后数组：");
 
         for (int i = 0; i < array.length; i++) {
             System.out.print("" + array[i] + " ");
         }
+        double lgn = Math.log(array.length)/Math.log(2);
+        c = (int)(times / (array.length * lgn));
 
-        System.out.println("运算次数：" + times);
+
+        System.out.println("\n运算次数：" + times + "  算法复杂度为nlgn，系数c不大于:" + c);
     }
 
 
@@ -49,7 +56,9 @@ public class Array {
             else if(mergeWay == 3){
                 merge3(begin, dividePosition, end,array);
             }
+            times += 5;
         }
+        times++;
 
 
     }
@@ -60,22 +69,27 @@ public class Array {
         int[] array2 = new int[end - dividePosition + 1];
         array1[array1.length - 1] = Integer.MAX_VALUE;
         array2[array2.length - 1] = Integer.MAX_VALUE;
+        times += 4;
 
         for (int i = 0; i < array1.length - 1; i++) {
             array1[i] = array[begin + i];
+            times += 2;
         }
         for (int i = 0; i < array2.length - 1; i++) {
             array2[i] = array[dividePosition + i + 1];
+            times += 2;
         }
 
         for (int i = begin, index1 = 0,index2 = 0; i <= end; i++) {
             if(array1[index1] < array2[index2]){
                 array[i] = array1[index1];
                 index1++;
+                times += 4;
             }
             else{
                 array[i] = array2[index2];
                 index2++;
+                times += 4;
             }
         }
     }
