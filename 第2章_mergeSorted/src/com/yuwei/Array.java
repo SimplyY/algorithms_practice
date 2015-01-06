@@ -34,7 +34,7 @@ public class Array {
     }
 
     private void showMergeSort() {
-        System.out.println("排序方式：" + mergeWay + "\n排序完成后数组：");
+        System.out.print("\n排序方式：" + mergeWay + "\n排序完成后数组：");
 
         for (int i = 0; i < array.length; i++) {
             System.out.print("" + array[i] + " ");
@@ -113,7 +113,7 @@ public class Array {
     private void merge2(int begin, int dividePosition, int end, int[] array) {
         int[] array1 = new int[dividePosition - begin + 1];
         int[] array2 = new int[end - dividePosition];
-        times += 4;
+        times += 2;
 
         for (int i = 0; i < array1.length; i++) {
             array1[i] = array[begin + i];
@@ -129,11 +129,11 @@ public class Array {
                 if (array1[index1] < array2[index2]) {
                     array[i] = array1[index1];
                     index1++;
-                    times += 4;
+                    times += 6;
                 } else {
                     array[i] = array2[index2];
                     index2++;
-                    times += 4;
+                    times += 6;
                 }
             } else if (index1 < array1.length) {
                 array[i] = array1[index1];

@@ -10,8 +10,9 @@ public class Main {
         int mergeWay2 = 2;
         int mergeWay3 = 3;
 
+        System.out.print("原数组：");
         for (int i = 0; i < sortedArray.length; i++) {
-            System.out.print("" + sortedArray[i] + " ");
+            System.out.print( + sortedArray[i] + " ");
         }
 
         Array array1 = new Array(sortedArray);
@@ -22,7 +23,5 @@ public class Main {
 
         Array array3 = new Array(sortedArray);
         array3.doMergeSort(mergeWay3);
-
-
     }
 }
