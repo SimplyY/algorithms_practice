@@ -43,7 +43,7 @@ public class Array {
         c = (int) (times / (array.length * lgn));
 
 
-        System.out.println("\n运算次数：" + times + "  算法复杂度为nlgn，系数c不大于:" + c);
+        System.out.println("\n运算次数：" + times + "  算法复杂度为nlgn，系数c不小于:" + c);
     }
 
 

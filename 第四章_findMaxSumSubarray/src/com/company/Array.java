@@ -95,7 +95,7 @@ public class Array {
         }
         if(findWay == 1){
             c = (int)(times/(array.length * array.length));
-            System.out.println("\n运算次数：" + times + "  算法复杂度为n2，系数c不大于:" + c);
+            System.out.println("\n运算次数：" + times + "  算法复杂度为n2，系数c不小于:" + c);
         }
 
         if(findWay == 2) {
