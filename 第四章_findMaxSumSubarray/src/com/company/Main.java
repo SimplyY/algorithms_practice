@@ -13,6 +13,10 @@ public class Main {
         Array array1 = new Array(array);
         array1.doFindMaxSumSubarray(findWay1);
 
+
+
+
+
         
     }
 }

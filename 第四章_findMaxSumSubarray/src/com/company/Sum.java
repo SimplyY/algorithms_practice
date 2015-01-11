@@ -5,9 +5,9 @@ package com.company;
  */
 public class Sum {
 
-    private int begin;
-    private int end;
-    private int sum;
+    private int begin = 0;
+    private int end = 0;
+    private int sum = 0;
 
     public int getBegin() {
         return begin;
@@ -22,9 +22,7 @@ public class Sum {
     }
 
     public Sum() {
-        begin = 0;
-        end = 0;
-        sum = 0;
+
     }
 
     public void setBegin(int begin) {
