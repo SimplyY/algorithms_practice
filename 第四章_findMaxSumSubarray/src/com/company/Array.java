@@ -24,7 +24,7 @@ public class Array {
     public void doFindMaxSumSubarray(int findWay) {
         this.findWay = findWay;
         if(findWay == 1){
-            Sum maxSumSubarray = findMaxSumSubarray(array);
+            Sum maxSumSubarray = findMaxSumSubarray();
             showMaxSubarraySum(maxSumSubarray);
 
         }
@@ -33,12 +33,13 @@ public class Array {
             showMaxSubarraySum(maxSumSubarray);
         }
         else if(findWay == 3){
-
+            Sum maxSumSubarray = findMaxSumSubarrayUnrecursion();
+            showMaxSubarraySum(maxSumSubarray);
         }
     }
 
-
-    private Sum findMaxSumSubarray(int[] array){
+    //法1：暴力法
+    private Sum findMaxSumSubarray(){
         Sum[][] subarraySum = new Sum[array.length][array.length];
         Sum maxSubarraySum = new Sum();
 
@@ -90,7 +91,7 @@ public class Array {
         return maxSubarraySum;
     }
 
-    //递归法
+    //法2：递归法
     private Sum findMaxSumSubarrayRecursion(int begin,int end){
         //如果数组长度为1，最大子数组为它本身
 
@@ -116,6 +117,7 @@ public class Array {
         }
     }
 
+    //法2：求越过左右数组的最大子数组
     private Sum findCrossMaxSubarray(int begin,int divideIndex, int end){
         Sum crossMaxSum = new Sum();
         Sum leftMaxSubarraySum = new Sum();
@@ -123,7 +125,7 @@ public class Array {
         Sum[] leftSubarraySum = new Sum[divideIndex - begin + 1];
         Sum[] rightSubarraySum = new Sum[end - divideIndex];
 
-        for (int i = divideIndex; i >=begin; i--) {
+        for (int i = divideIndex; i >= begin; i--) {
             if(i < divideIndex){
                 int theBegin = i;
                 int theEnd = divideIndex;
@@ -167,6 +169,45 @@ public class Array {
 
     }
 
+    //法3：
+    private Sum findMaxSumSubarrayUnrecursion(){
+        Sum theMaxSumInJ = new Sum();
+        Sum theMaxSumInNextJ = new Sum();
+
+        for (int j = 0; j < array.length - 1; j++) {
+            if (j == 0){
+                theMaxSumInJ.setSum(0,0,array[0]);
+            }
+            else{
+                Sum[] sumsInNextJ = new Sum[j + 1];
+                for (int i = j; i >= 0; i--) {
+                    sumsInNextJ[i] = new Sum();
+                    if (i == j){
+                        sumsInNextJ[i].setSum(i, i, array[i]);
+                    }
+                    else{
+                        sumsInNextJ[i].setSum(sumsInNextJ[i + 1].getSum() + array[i]);
+                        sumsInNextJ[i].setBegin(i);
+                        sumsInNextJ[i].setEnd(j);
+                    }
+                }
+
+                for (int i = 0; i < j + 1; i++) {
+                    if (sumsInNextJ[i].getSum() > theMaxSumInNextJ.getSum()){
+                        theMaxSumInNextJ.copy(sumsInNextJ[i]);
+                    }
+                }
+
+                if (theMaxSumInNextJ.getSum() > theMaxSumInJ.getSum()) {
+                    theMaxSumInJ.copy(theMaxSumInNextJ);
+                }
+            }
+        }
+
+        return theMaxSumInJ;
+    }
+
+
     private void showMaxSubarraySum(Sum maxSubarraySum) {
         System.out.println("\n查找最大子数组方式：" + findWay + "\n最大子数组的和为" + maxSubarraySum.getSum() + "\n最大子数组为：");
         System.out.println("begin：" + maxSubarraySum.getBegin() + "\nend:" + maxSubarraySum.getEnd());
@@ -187,7 +228,6 @@ public class Array {
         }
 
     }
-
 
 
 }

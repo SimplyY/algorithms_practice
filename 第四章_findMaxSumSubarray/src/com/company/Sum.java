@@ -39,7 +39,19 @@ public class Sum {
         this.sum = sum;
     }
 
+    public void setSum(int begin, int end, int sum) {
+        this.begin = begin;
+        this.end = end;
+        this.sum = sum;
+    }
+
     public void setSum(int sum) {
         this.sum = sum;
+    }
+
+    public void copy(Sum sum){
+        this.sum = sum.getSum();
+        this.begin = sum.getBegin();
+        this.end = sum.getEnd();
     }
 }

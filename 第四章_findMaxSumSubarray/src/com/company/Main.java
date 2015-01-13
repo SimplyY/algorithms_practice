@@ -11,7 +11,7 @@ public class Main {
         int findWay3 = 3;
 
         Array array1 = new Array(array);
-        array1.doFindMaxSumSubarray(findWay1);
+        array1.doFindMaxSumSubarray(findWay3);
 
 
 
