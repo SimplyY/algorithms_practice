@@ -33,10 +33,10 @@ public class Array {
     public void heapSort(){
         buildMaxHeap();
         times ++;
-        for (int i = heapSize - 1; i >= 1 ; i--) {
+        for (int i = heapSize - 1; i >= 0 ; i--) {
             swap(0, i);
             heapSize --;
-            maxHeapify(1);
+            maxHeapify(0);
             times += 4;
         }
     }
