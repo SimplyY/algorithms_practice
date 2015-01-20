@@ -36,8 +36,8 @@
       <file leaf-file-name="Array.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Array.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50641024" vertical-offset="652" max-vertical-offset="2090">
-              <caret line="119" column="16" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.4012841" vertical-offset="652" max-vertical-offset="2090">
+              <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
               <folding>
                 <element signature="method#findMaxSumSubarray#0;class#Array#0" expanded="false" />
                 <element signature="method#findMaxSumSubarrayRecursion#0;class#Array#0" expanded="false" />
@@ -369,12 +369,12 @@
       <workItem from="1420971246457" duration="6688000" />
       <workItem from="1421140609629" duration="6826000" />
       <workItem from="1421306645141" duration="230000" />
-      <workItem from="1421673729480" duration="27000" />
+      <workItem from="1421673729480" duration="917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25735000" />
+    <option name="totallyTimeSpent" value="26625000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -596,8 +596,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Array.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50641024" vertical-offset="652" max-vertical-offset="2090">
-          <caret line="119" column="16" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.4012841" vertical-offset="652" max-vertical-offset="2090">
+          <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
           <folding>
             <element signature="method#findMaxSumSubarray#0;class#Array#0" expanded="false" />
             <element signature="method#findMaxSumSubarrayRecursion#0;class#Array#0" expanded="false" />

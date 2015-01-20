@@ -11,7 +11,7 @@ public class Array {
     //times means the algorithms's caculating times
     private int times;
     //n means quotiety of algorithms's n
-    private int c;
+    private int c ;
 
     Array(int[] array) {
 
