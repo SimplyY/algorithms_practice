@@ -1,0 +1,18 @@
+int MaxSubArray(int *a,int &l,int &h)
+{
+    int max=0,sum=0,current=1,low,high;
+    for(int i=1;i<=a.length();i++)
+    {
+        sum+=a[i];
+        if(sum>max)
+        {
+            max=sum;low=current;high=i;
+        }
+        else if (sum<0)
+        {
+            current=i+1;sum=0;
+        }
+    }
+    if (max>0) {l=low;h=high};
+    return ans;
+}
