@@ -21,7 +21,7 @@ public class Main {
 
     public static void main(String[] args) {
 //      0 < array[i] < bound && array.length = bound
-        int bound = 20;
+        int bound = 10;
         Array array1 = initRandomArray(bound);
         Array array2 = new Array(array1);
         Array array3 = new Array(array1);
@@ -30,6 +30,8 @@ public class Main {
         array1.showLineSort();
 
         array2.radixSort();
+
+        array3.bucketSort();
 
     }
 }

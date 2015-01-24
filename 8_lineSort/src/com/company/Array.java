@@ -9,7 +9,7 @@ public class Array {
     private int end;
     private int[] m_array;
     //times means the algorithms's caculating times
-    private int times;
+    private Integer times;
     //c means quotiety of algorithms's c
     private int c;
     private int bound;
@@ -93,12 +93,14 @@ public class Array {
         int radixAmount = (int)Math.log10(bound) + 1;
 
         RadixData[] radixArray = RadixData.getRadixData(m_array, radixAmount);
-
-        int a = 0;
-
+        RadixData.countingSortForRadix(radixArray);
+        times = RadixData.m_times;
+        showLineSort();
     }
 
-
+    public void bucketSort(){
+        Bucket[] bucketArray = Bucket.getBuckets(m_array);
+    }
 
 
     public void showLineSort() {
