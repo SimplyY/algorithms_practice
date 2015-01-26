@@ -17,12 +17,15 @@ public class Bucket {
 
     public  static Bucket[] getBuckets(int[] array){
         Bucket[] buckets = new Bucket[array.length];
+        times++;
         for (int i = 0; i < array.length; i++) {
             buckets[i] = new Bucket();
+            times += 2;
         }
         for (int i = 0; i < array.length; i++) {
             int bucketIndex = array[i];
             buckets[bucketIndex].linkedList.add(array[i]);
+            times += 3;
         }
         return  buckets;
     }

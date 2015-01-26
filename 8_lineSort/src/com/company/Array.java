@@ -100,6 +100,17 @@ public class Array {
 
     public void bucketSort(){
         Bucket[] bucketArray = Bucket.getBuckets(m_array);
+        times = Bucket.times;
+        //如果有小数则用插入排序使桶内有序
+        //将桶内有序数组赋值给m_array
+        for (int i = 0, index  = 0; i < bucketArray.length; i++) {
+            for (int j = 0; j < bucketArray[i].linkedList.size(); j++) {
+                m_array[index] = bucketArray[i].linkedList.get(j).intValue();
+                index ++;
+                times += 4;
+            }
+        }
+        showLineSort();
     }
 
 
