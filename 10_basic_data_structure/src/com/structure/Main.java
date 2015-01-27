@@ -17,12 +17,29 @@ public class Main {
             testList.insert(currentNode, currentData);
             currentNode = testList.search(currentData);
         }
+
+    }
+
+    public static void queueTest(){
+        Queue testQueue = new Queue(10);
+        Random random = new Random();
+        for (int i = 0; i < 11; i++) {
+            int currentData = random.nextInt(100);
+            testQueue.enqueue(currentData);
+            System.out.print(currentData + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < 11; i++) {
+            int data = testQueue.dequeue();
+            System.out.print(data + " ");
+        }
     }
 
     public static void main(String[] args) {
         initLinkList();
         testList.output();
         testList.outputSorted();
+        queueTest();
     }
 }
 
