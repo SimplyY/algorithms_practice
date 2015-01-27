@@ -35,11 +35,28 @@ public class Main {
         }
     }
 
+    public static void stackTest(){
+        Stack testStack = new Stack(10);
+        Random random = new Random();
+        for (int i = 0; i < 11; i++) {
+            int currentData = random.nextInt(100);
+            testStack.push(currentData);
+            System.out.print(currentData + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < 11; i++) {
+            int data = testStack.pop();
+            System.out.print(data + " ");
+        }
+    }
+
     public static void main(String[] args) {
-        initLinkList();
-        testList.output();
-        testList.outputSorted();
-        queueTest();
+//        initLinkList();
+//        testList.output();
+//        testList.outputSorted();
+//        queueTest();
+        stackTest();
+
     }
 }
 
