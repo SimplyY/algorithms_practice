@@ -5,29 +5,25 @@ package com.structure;
  */
 //tail在队列末尾最后一项的后面一位
 public class Queue {
-    private int head;
-    private int tail;
-    private int size;
     private int[] a;
+    private int size;
+
+    private int head = 0;
+    private int tail = 0;
 
 //只有入队时才会full，出队时才会empty
 //反之亦然，入队时原来为flase的empty才能变成true
 //初始化时为empty
-    private boolean isEmpty;
-    private boolean isFull;
+    private boolean isEmpty = true;
+    private boolean isFull = false;
 
     public Queue(int size){
         if (size == 0){
             System.out.println("无法创建size为0的队列");
             return;
         }
-        head = 0;
-        tail = 0;
         this.size = size;
         a = new int[size];
-
-        isEmpty = true;
-        isFull = false;
     }
 
     public void enqueue(int data){
