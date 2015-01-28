@@ -6,6 +6,22 @@ public class Main {
 
     static LinkList testList;
 
+
+
+
+
+    public static void main(String[] args) {
+//        initLinkList();
+//        testList.output();
+//        testList.outputSorted();
+//        queueTest();
+//        stackTest();
+
+        binTreeTest();
+
+    }
+
+
     public static void initLinkList(){
         testList = new LinkList();
         Random random = new Random();
@@ -50,13 +66,12 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-//        initLinkList();
-//        testList.output();
-//        testList.outputSorted();
-//        queueTest();
-        stackTest();
+    public static void binTreeTest(){
+        int NULL = Integer.MIN_VALUE;
+        int[] testArrayTree = {1,2,4,NULL,NULL,5,NULL,NULL,3,NULL,NULL};
 
+        BinTree testTree = new BinTree(testArrayTree);
+        testTree.show();
     }
 }
 
