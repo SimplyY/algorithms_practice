@@ -6,22 +6,23 @@ package com.structure;
 public class BinTree {
     private TreeNode root = null;
     int index = 0;
-    private int NULL = Integer.MIN_VALUE;
+    private final int NULL = Integer.MIN_VALUE;
 
+    public BinTree(TreeNode root, int index){
+        this.root = root;
+        this.index = index;
+    }
 
 //treeArray中将NULL当做空分支，按先序建树
     public BinTree(int[] treeArray){
-        int index = 0;
+        index = 0;
         root = new TreeNode();
         TreeNode current = root;
         createTree(current, treeArray);
         System.out.println();
     }
 
-    public void show(){
-        preOrder(root);
-        System.out.println();
-    }
+
 
 //记住在建树的时候，要对每个节点的left、right、parents赋值
     private void createTree(TreeNode current, int[] treeArray){
@@ -47,6 +48,11 @@ public class BinTree {
             return;
         }
 
+    }
+
+    public void show(){
+        preOrder(root);
+        System.out.println();
     }
 
     private void preOrder(TreeNode current){

@@ -10,7 +10,7 @@ public class TreeNode {
     private TreeNode right = null;
 
     public int getValue() {
-        return value;
+        return  value;
     }
 
     public void setValue(int value) {

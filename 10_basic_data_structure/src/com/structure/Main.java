@@ -18,7 +18,7 @@ public class Main {
 //        stackTest();
 
         binTreeTest();
-
+        normalTreeTest();
     }
 
 
@@ -67,11 +67,20 @@ public class Main {
     }
 
     public static void binTreeTest(){
-        int NULL = Integer.MIN_VALUE;
+        final int NULL = Integer.MIN_VALUE;
         int[] testArrayTree = {1,2,4,NULL,NULL,5,NULL,NULL,3,NULL,NULL};
 
         BinTree testTree = new BinTree(testArrayTree);
         testTree.show();
     }
+
+    public static void normalTreeTest(){
+        final int NULL = Integer.MIN_VALUE;
+        int[] testArrayTres = {0,1,5,NULL,6,NULL,7,NULL,NULL,2,NULL,3,NULL,4,NULL,NULL};
+
+        NormalTree testTree = new NormalTree(testArrayTres);
+        testTree.show();
+    }
+
 }
 
