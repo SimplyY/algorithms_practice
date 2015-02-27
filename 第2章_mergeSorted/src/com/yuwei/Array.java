@@ -152,7 +152,7 @@ public class Array {
         for (int i = begin + 1; i < end; i++) {
             int key = array[i];
             times += 2;
-            for (int j = i - 1; j > 0; j--) {
+            for (int j = i - 1; j >= 0; j--) {
                 if(key < array[j]){
                     array[j + 1] = array[j];
                     times += 3;
