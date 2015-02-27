@@ -158,9 +158,11 @@ public class Array {
                     array[j + 1] = array[j];
                     times += 3;
                 }
-                
-                array[j + 1] = key;
+                else{
+                    break;
+                }
             }
+            array[j + 1] = key;
         }
     }
 }
